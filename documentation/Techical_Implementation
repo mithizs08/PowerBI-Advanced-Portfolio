@@ -4,7 +4,8 @@ This document provides a detailed technical breakdown of the advanced Power BI t
 
 ---
 
-## Challenge 1: Dynamic Visual Feedback
+<details>
+<summary><strong>Challenge 1: Dynamic Visual Feedback</strong></summary>
 
 **Problem:** KPI cards remained static regardless of filter selection.  
 **Solution:** Implemented advanced DAX with `ISFILTERED()` and `VALUES()` for conditional formatting.  
@@ -59,9 +60,10 @@ IF(
 )
 ```
 
----
+</details>
 
-## Challenge 2: Responsive Bar Chart Fix
+<details>
+<summary><strong>Challenge 2: Responsive Bar Chart Fix</strong></summary>
 
 **Problem:** Bar chart showing incorrect counts, not responding to slicer selections.  
 **Solution:** Corrected context transition using `COUNTROWS()` instead of direct table reference.  
@@ -89,9 +91,10 @@ Devices Awaiting/Other = CALCULATE(
 )
 ```
 
----
+</details>
 
-## Challenge 3: Bulk Data Anonymization
+<details>
+<summary><strong>Challenge 3: Bulk Data Anonymization</strong></summary>
 
 **Problem:** 100+ unique supplier names required manual replacement (hours of work).  
 **Solution:** Built custom M-Code using Merge Queries + `Table.Distinct` for automated replacement.  
@@ -110,9 +113,10 @@ in
     MergedData
 ```
 
----
+</details>
 
-## Challenge 4: Data Standardization
+<details>
+<summary><strong>Challenge 4: Data Standardization</strong></summary>
 
 **Problem:** Inconsistent management status codes (e.g., `9 - MANAGED` vs `1 - MANAGED`).  
 **Solution:** Applied M-Code transformation to standardize values across dataset.  
@@ -128,9 +132,10 @@ in
 )
 ```
 
----
+</details>
 
-## Challenge 5: HR Data Security
+<details>
+<summary><strong>Challenge 5: HR Data Security</strong></summary>
 
 **Problem:** Employee names exposed in reports (privacy violation).  
 **Solution:** Applied merge query methodology to generate generic identifiers.  
@@ -147,9 +152,10 @@ in
     Anonymized
 ```
 
----
+</details>
 
-## Challenge 6: Time Intelligence for Tenure
+<details>
+<summary><strong>Challenge 6: Time Intelligence for Tenure</strong></summary>
 
 **Problem:** Calculate average employee tenure accurately.  
 **Solution:** Used DAX Time Intelligence functions on Hire Date column.  
@@ -183,6 +189,8 @@ Devices Awaiting/Other = CALCULATE(
     'v_alm_hardware'[Status] IN {"Missing", "Retired"}
 )
 ```
+
+</details>
 
 ---
 
